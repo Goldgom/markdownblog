@@ -50,7 +50,7 @@ const defaultRender = md.renderer.rules.link_open || function(tokens: any[], idx
   return md.renderer.renderToken(tokens, idx, options);
 };
 
-md.renderer.rules.link_open = function (tokens: any[], idx: number, options: any) {
+md.renderer.rules.link_open = function (tokens: any[], idx: number, options: any, env: any, self: any) {
   // 找到 href 属性的索引
   const hrefIndex = tokens[idx].attrIndex('href');
   if (hrefIndex >= 0) {
@@ -68,7 +68,7 @@ md.renderer.rules.link_open = function (tokens: any[], idx: number, options: any
     // 如果没有找到 href 属性，添加它
     tokens[idx].attrPush(['href', 'javascript:void(0)']);
   }
-  return defaultRender(tokens, idx, options);
+  return defaultRender(tokens, idx, options, env, self);
 };
 const renderedMarkdown = ref('');
 onMounted(async () => {

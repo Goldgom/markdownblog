@@ -7,6 +7,8 @@
 import { defineProps } from 'vue'
 import MyMarkdownBlogs from '@/components/MyMarkdownBlogs.vue';
 const props = defineProps({
-    path: String
-});
+    path: {
+        type: Array as () => Array<string>,
+        default: () => [],
+    },});
 </script>
