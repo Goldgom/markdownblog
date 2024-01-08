@@ -1,5 +1,5 @@
 <template>
-    <MyMarkdownBlogs :path="props.path" git="/year-end-fragmented-thoughts/"/>
+    <MyMarkdownBlogs :path="props.path" git="/whispers-in-the-end--of-year/"/>
 
 </template>
 
